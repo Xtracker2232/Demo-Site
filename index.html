@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marché à la ferme</title>
+  <meta name="description" content="Produits frais de la ferme en vente directe : légumes, fruits, œufs, viande. Consultez les produits disponibles cette semaine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Bandeau d'information ===== -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="statut" id="statut"><i data-icon="clock"></i><span id="statut-texte">Horaires du marché</span></span>
+      <span class="topbar-contact">
+        <i data-icon="mapPin"></i><span data-config="adresse"></span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="marque">
+        <span class="marque-logo"><i data-icon="sprout"></i></span>
+        <span data-config="nom">Ma Ferme</span>
+      </a>
+      <nav class="nav">
+        <a href="#produits">Produits</a>
+        <a href="#ferme">La ferme</a>
+        <a href="#infos">Horaires &amp; accès</a>
+      </nav>
+      <a href="#" class="btn btn-primaire btn-petit" data-tel><i data-icon="phone"></i><span>Appeler</span></a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Accueil ===== -->
+    <section class="hero">
+      <div class="container hero-grille">
+        <div class="hero-texte">
+          <p class="surtitre">Vente directe du producteur</p>
+          <h1 data-config="nom">Ma Ferme</h1>
+          <p class="hero-intro" data-config="slogan"></p>
+          <div class="hero-boutons">
+            <a href="#produits" class="btn btn-primaire">Voir les produits de la semaine <i data-icon="arrowRight"></i></a>
+            <a href="#infos" class="btn btn-secondaire">Horaires et accès</a>
+          </div>
+          <ul class="hero-points">
+            <li><i data-icon="leaf"></i>Récolté sur place</li>
+            <li><i data-icon="calendar"></i>Selon les saisons</li>
+            <li><i data-icon="store"></i>Sans intermédiaire</li>
+          </ul>
+        </div>
+        <div class="hero-visuel">
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=75" alt="Étal de fruits et légumes frais">
+          <div class="hero-carte">
+            <span class="hero-carte-icone"><i data-icon="calendar"></i></span>
+            <div>
+              <p class="hero-carte-label" id="carte-label">Prochain marché</p>
+              <p class="hero-carte-valeur" id="carte-valeur">—</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Produits ===== -->
+    <section id="produits" class="section">
+      <div class="container">
+        <div class="section-entete">
+          <div>
+            <p class="surtitre">Disponibles cette semaine</p>
+            <h2>Les produits de la ferme</h2>
+          </div>
+          <p class="section-note">Liste mise à jour chaque semaine par la ferme. Les quantités sont limitées.</p>
+        </div>
+        <div class="filtres" id="filtres" role="tablist" aria-label="Catégories de produits"></div>
+        <div class="produits" id="liste-produits">
+          <p class="message">Chargement des produits…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== La ferme ===== -->
+    <section id="ferme" class="section section-fond">
+      <div class="container">
+        <div class="ferme-grille">
+          <div>
+            <p class="surtitre">Notre ferme</p>
+            <h2>Du champ à votre panier</h2>
+            <p class="ferme-texte" data-config="presentation"></p>
+          </div>
+          <div class="engagements">
+            <article class="engagement">
+              <span class="engagement-icone"><i data-icon="sprout"></i></span>
+              <div>
+                <h3>Produit sur place</h3>
+                <p>Nos légumes, fruits et animaux grandissent ici, sur les terres de la ferme.</p>
+              </div>
+            </article>
+            <article class="engagement">
+              <span class="engagement-icone"><i data-icon="calendar"></i></span>
+              <div>
+                <h3>Au rythme des saisons</h3>
+                <p>Nous ne vendons que ce que la saison permet de récolter, sans produit importé.</p>
+              </div>
+            </article>
+            <article class="engagement">
+              <span class="engagement-icone"><i data-icon="handshake"></i></span>
+              <div>
+                <h3>Vente directe</h3>
+                <p>Pas d'intermédiaire : un prix juste pour vous et une rémunération juste pour nous.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Horaires & accès ===== -->
+    <section id="infos" class="section">
+      <div class="container">
+        <div class="section-entete">
+          <div>
+            <p class="surtitre">Venir au marché</p>
+            <h2>Horaires et accès</h2>
+          </div>
+        </div>
+        <div class="infos-grille">
+          <div class="carte-info">
+            <h3><i data-icon="clock"></i>Jours d'ouverture</h3>
+            <table class="horaires"><tbody id="liste-horaires"></tbody></table>
+          </div>
+          <div class="carte-info">
+            <h3><i data-icon="mapPin"></i>Adresse</h3>
+            <p class="info-texte" data-config="adresse"></p>
+            <h3><i data-icon="phone"></i>Téléphone</h3>
+            <p class="info-texte"><a href="#" data-tel class="lien"></a></p>
+            <a href="#" class="btn btn-primaire" id="itineraire" target="_blank" rel="noopener"><i data-icon="navigation"></i>Calculer l'itinéraire</a>
+          </div>
+          <iframe id="carte" class="carte" title="Plan d'accès" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pied de page ===== -->
+  <footer class="footer">
+    <div class="container footer-grille">
+      <div>
+        <p class="marque marque-footer">
+          <span class="marque-logo"><i data-icon="sprout"></i></span>
+          <span data-config="nom">Ma Ferme</span>
+        </p>
+        <p class="footer-texte">Produits fermiers en vente directe.</p>
+      </div>
+      <div>
+        <p class="footer-titre">Contact</p>
+        <p data-config="adresse"></p>
+        <p><a href="#" data-tel></a></p>
+      </div>
+      <div>
+        <p class="footer-titre">Horaires</p>
+        <div id="footer-horaires"></div>
+      </div>
+    </div>
+    <div class="container footer-bas">
+      <p>© <span id="annee"></span> <span data-config="nom"></span>. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="appel-mobile" data-tel><i data-icon="phone"></i><span>Appeler la ferme</span></a>
+
+  <script src="script.js"></script>
+</body>
+</html>

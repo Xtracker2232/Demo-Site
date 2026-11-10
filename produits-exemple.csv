@@ -1,0 +1,11 @@
+Produit,Catégorie,Prix,Unité,Disponible
+Carottes,Légumes,"2,50 €",le kg,oui
+Poireaux,Légumes,"3,00 €",la botte,oui
+Courge butternut,Légumes,"2,80 €",le kg,oui
+Pommes de terre,Légumes,"1,90 €",le kg,non
+Pommes Reinette,Fruits,"3,20 €",le kg,oui
+Poires,Fruits,"3,50 €",le kg,oui
+Œufs plein air,Œufs,"3,60 €",les 12,oui
+Poulet fermier,Viande,"11,90 €",le kg,oui
+Saucisses maison,Viande,"15,00 €",le kg,non
+Miel de fleurs,Épicerie,"8,50 €",le pot 500 g,oui
